@@ -214,15 +214,15 @@
                             </ul>
                             <!-- Tab panes -->
                             <div class="tab-content">
+                                @foreach($posts as $post)
                                 <div class="tab-pane active" id="home" role="tabpanel">
                                     <div class="card-body">
                                         <div class="profiletimeline border-start-0">
                                             <div class="sl-item">
                                                 <div class="sl-left"> <img src="../assets/images/users/1.jpg" alt="user" class="img-circle"> </div>
                                                 <div class="sl-right">
-                                                    <div><a href="#" class="link">John Doe</a> <span class="sl-date">5
-                                                            minutes ago</span>
-                                                        <p>assign a new task <a href="#"> Design weblayout</a></p>
+                                                    <div><a href="#" class="link">{{ $post->user->name }} </a> <span class="sl-date">on {{ $post->created_at }}p</span>
+                                                        <p>{{ $post->body }}</p>
                                                         <div class="row">
                                                             <div class="col-lg-3 col-md-6 mb-3"><img src="../assets/images/big/img1.jpg" alt="user" class="img-responsive radius w-100"></div>
                                                             <div class="col-lg-3 col-md-6 mb-3"><img src="../assets/images/big/img2.jpg" alt="user" class="img-responsive radius w-100"></div>
@@ -238,6 +238,7 @@
                                         </div>
                                     </div>
                                 </div>
+                                @endforeach
                                 <!--second tab-->
                                 <div class="tab-pane" id="profile" role="tabpanel">
                                     <div class="card-body">

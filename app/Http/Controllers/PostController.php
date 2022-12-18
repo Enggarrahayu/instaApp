@@ -13,11 +13,16 @@ class PostController extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
-    public function dashboard()
-    {
-        return view('timeline');
-    }
+    // public function dashboard()
+    // {
+    //     return view('timeline');
+    // }
 
+    public function getDashboard()
+    {
+        $posts = Post::orderBy('created_at', 'desc')->get();
+        return view('timeline', ['posts' => $posts]);
+    }
     public function postCreatePost(Request $request)
     {
         $this->validate($request, [

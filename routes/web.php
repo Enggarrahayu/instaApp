@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', 'App\Http\Controllers\UserController@getSignUp')->name('register');
-Route::get('/dashboard', 'App\Http\Controllers\PostController@dashboard')->name('dashboard');
+Route::get('/dashboard', 'App\Http\Controllers\PostController@getDashboard')->name('dashboard');
 Route::post('/signup', 'App\Http\Controllers\UserController@postSignUp')->name('signup');
 Route::post('/signin', 'App\Http\Controllers\UserController@postSignIn')->name('signin');
 Route::get('/get_signin', 'App\Http\Controllers\UserController@getSignIn')->name('get_signin');
