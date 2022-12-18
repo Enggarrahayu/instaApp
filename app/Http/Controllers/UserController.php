@@ -54,4 +54,10 @@ class UserController extends Controller
     {
         return view('login');
     }
+
+    public function getLogout()
+    {
+        Auth::logout();
+        return redirect()->route('get_signin');
+    }
 }

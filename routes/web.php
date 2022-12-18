@@ -19,3 +19,5 @@ Route::get('/dashboard', 'App\Http\Controllers\PostController@dashboard')->name(
 Route::post('/signup', 'App\Http\Controllers\UserController@postSignUp')->name('signup');
 Route::post('/signin', 'App\Http\Controllers\UserController@postSignIn')->name('signin');
 Route::get('/get_signin', 'App\Http\Controllers\UserController@getSignIn')->name('get_signin');
+Route::get('logout', '\App\Http\Controllers\UserController@getLogout')->name('logout');
+Route::post('/postcreate', 'App\Http\Controllers\PostController@postCreatePost')->name('postcreate');

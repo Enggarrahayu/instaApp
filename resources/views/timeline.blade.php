@@ -105,7 +105,9 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 <img src="../assets/images/users/1.jpg" alt="user" class="profile-pic me-2">{{ Auth::user()->name}}
+                                <a href="logout"> <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i> Logout</a>
                             </a>
+
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown"></ul>
                         </li>
                     </ul>
@@ -181,20 +183,21 @@
                 <div class="col-lg-8 col-xlg-9 col-md-7">
                     <div class="card">
                         <div class="card-body">
-                            <form class="form-horizontal form-material mx-2">
-                                <div class="form-group">
+                            <form action="{{ route('postcreate') }}" method="POST" class="form-horizontal form-material mx-2">
+                                @csrf
+                                <!-- <div class="form-group">
                                     <label for="exampleFormControlFile1">Upload Gambar</label>
                                     <input type="file" class="form-control-file" id="exampleFormControlFile1">
-                                </div>
+                                </div> -->
                                 <div class="form-group">
                                     <label class="col-md-12 mb-0">Message</label>
                                     <div class="col-md-12">
-                                        <textarea rows="5" class="form-control ps-0 form-control-line"></textarea>
+                                        <textarea rows="5" name="body" class="form-control ps-0 form-control-line"></textarea>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <div class="col-sm-12 d-flex">
-                                        <button class="btn btn-success mx-auto mx-md-0 text-white">Post Picture</button>
+                                        <button class="btn btn-success mx-auto mx-md-0 text-white" type="submit">Post Picture</button>
                                     </div>
                                 </div>
                             </form>
